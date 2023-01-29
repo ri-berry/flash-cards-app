@@ -8,7 +8,6 @@ import dev.linblackberry.flashcardapp.model.Flashcard;
 
 import java.util.List;
 
-@Repository
 public interface FlashcardRepository extends CosmosRepository<Flashcard, Long> {
     List<Flashcard> findByCategory(Category category);
 }
