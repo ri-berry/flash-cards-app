@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${category}"></title>
+</head>
+<body>
+  <div th:insert="index :: header"></div>
+  <h1 th:text="${category}"></h1>
+  <div th:if="#{Lists.isEmpty(${flashcards})}">
+    <h3 class="alert">No Flashcards to Display.</h3>
+  </div>
+  <div th:unless="#{Lists.isEmpty(${flashcards})}">
+    <ul>
+      <li th:each="flashcard: ${flaschards}" th:text="${flashcard}"></li>
+    </ul>
+  </div>
+
+  <div th:insert="index :: footer"></div>
+</body>
+</html>
