@@ -11,10 +11,10 @@ import java.util.Optional;
 
 @Service
 public class FlashcardService {
-    private FlashcardRepository flashcardRepo;
+    private final FlashcardRepository flashcardRepo;
 
     public FlashcardService(FlashcardRepository flashcardRepo) {
-        flashcardRepo = flashcardRepo;
+        this.flashcardRepo = flashcardRepo;
     }
 
     public Optional<Flashcard> getFlashcard(long id) {
@@ -22,9 +22,7 @@ public class FlashcardService {
     }
 
     public List<Flashcard> getFlashcardsByCategory(Category category) {
-        List<Flashcard> flashcards = new ArrayList<>();
-        flashcardRepo.findByCategory(category).forEach(flashcards::add);
-        return flashcards;
+        return new ArrayList<>(flashcardRepo.findByCategory(category));
     }
 
     public List<Flashcard> getAllFlashcards() {

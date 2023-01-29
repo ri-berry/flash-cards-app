@@ -1,11 +1,12 @@
 package dev.linblackberry.flashcardapp.controller;
 
-import dev.linblackberry.flashcardapp.model.Category;
-import dev.linblackberry.flashcardapp.service.FlashcardService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+
+import dev.linblackberry.flashcardapp.model.Category;
+import dev.linblackberry.flashcardapp.service.FlashcardService;
 
 @Controller
 public class FlashcardController {
@@ -22,6 +23,12 @@ public class FlashcardController {
         return "index";
     }
 
+    @GetMapping("/viewCategory")
+    public String forwardCategoryRequest(String category) {
+    	System.out.println("CATEGORY" + category);
+    	return "forward:/" + category;
+    }
+    
     @GetMapping("/{category}")
     public String toCategory(@PathVariable String category, Model model) {
         model.addAttribute("category", category);
