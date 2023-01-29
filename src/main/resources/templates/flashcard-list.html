@@ -12,7 +12,7 @@
   </div>
   <div th:unless="#{Lists.isEmpty(${flashcards})}">
     <ul>
-      <li th:each="flashcard: ${flaschards}" th:text="${flashcard}"></li>
+      <li th:each="flashcard: ${flashcards}" th:text="${flashcard}"></li>
     </ul>
   </div>
 

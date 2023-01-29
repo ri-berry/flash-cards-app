@@ -14,14 +14,15 @@
     </header>
 
     <h1>Categories</h1>
-    <form>
-        <select>
+    <form type="GET" th:action="@{/viewCategory}">
+        <select name="category">
             <option th:each="category: ${categories}" th:text="${category}"></option>
         </select>
+        <input type="submit" value="Go">
     </form>
 
     <footer th:fragment="footer">
-        ;&c Linette Mora, 2023
+        &copy; Linette Mora, 2023
     </footer>
 </body>
 </html>
