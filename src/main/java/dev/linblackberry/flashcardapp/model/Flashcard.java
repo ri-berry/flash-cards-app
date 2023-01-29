@@ -1,18 +1,17 @@
 package dev.linblackberry.flashcardapp.model;
 
-import com.azure.spring.data.cosmos.core.mapping.Container;
-import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 import org.springframework.data.annotation.Id;
 
-import java.util.Objects;
+import com.azure.spring.data.cosmos.core.mapping.Container;
+import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 
 @Container(containerName = "flashcards-container")
 public class Flashcard {
 	@Id
+	@PartitionKey
 	private long id;
 	private String question;
 	private String answer;
-	@PartitionKey
 	private Category category;
 
 	public Flashcard() {
