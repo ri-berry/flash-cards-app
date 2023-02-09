@@ -8,18 +8,8 @@
     <header th:fragment="header">
         <nav>
             <a th:href="@{/}">Home</a>
-            <a th:href="@{/all}">All Flashcards</a>
-            <a href="#">About</a>
         </nav>
     </header>
-
-    <h1>Categories</h1>
-    <form type="GET" th:action="@{/viewCategory}">
-        <select name="category">
-            <option th:each="category: ${categories}" th:text="${category}"></option>
-        </select>
-        <input type="submit" value="Go">
-    </form>
 
     <footer th:fragment="footer">
         &copy; Linette Mora, 2023
