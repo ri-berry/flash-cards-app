@@ -50,4 +50,4 @@ jobs:
           app-name: 'flash-card-ui-spring-boot'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0C1B643EB6624535BD9FC5AE756DAACC }}
-          package: '*.jar'
+          package: 'target/*.jar'
